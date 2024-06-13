@@ -1,0 +1,50 @@
+[tool.poetry]
+name = "mega-ai"
+version = "0.1.0"
+description = "Mega AI for voice call agent"
+authors = ["Richard Paul <rmp.prog.sa01@gmail.com>"]
+readme = "README.md"
+packages = [{include = "mega"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+django = "5.0.6"
+psycopg2 = "^2.9.9"
+drf-yasg = "^1.21.7"
+djangorestframework = "^3.15.1"
+
+
+[tool.poetry.group.dev.dependencies]
+flake8 = "^7.0.0"
+isort = "^5.13.2"
+mypy = "^1.10.0"
+black = "^24.4.2"
+django-stubs = "^5.0.2"
+pre-commit = "^3.7.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 88
+target-version = ['py37', 'py38', 'py39', 'py310']
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | db
+  | _build
+  | buck-out
+  | build
+  | dist
+  | migrations
+)/
+'''
+
+[tool.isort]
+profile = "black"
